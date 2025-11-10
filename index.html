@@ -14,14 +14,18 @@ th, td { padding:8px; text-align:center; border-bottom:1px solid #ddd; font-size
 th { background:linear-gradient(90deg,#0d47a1,#1976d2); color:#fff; font-weight:600;}
 tr:nth-child(even){ background:#f1f9ff;}
 tr:hover{ background:#dbeeff;}
-input, select { width:80%; padding:6px 8px; border-radius:5px; border:1px solid #ccc; font-size:14px;}
+input, select { border-radius:5px; border:1px solid #ccc; font-size:14px; transition: all 0.2s; padding:5px;}
 input:focus, select:focus { border-color:#42a5f5; box-shadow:0 0 6px rgba(66,165,245,0.3); outline:none;}
 .note { color:#e53935; text-align:center; margin:6px 0; font-weight:500; font-size:14px;}
 #resultTable h3 { color:#0d47a1; font-size:18px; text-align:center; margin-bottom:8px;}
+/* Smaller page & qty input, larger select */
+.pageQty { width:50px; font-size:13px; }
+.paperMaterial { width:70px; font-size:14px; }
+
 @media(max-width:480px){
   h2{ font-size:20px;}
   table, th, td{ font-size:13px;}
-  input, select{ width:100%; font-size:13px; margin-bottom:5px;}
+  input.pageQty, select.paperMaterial{ width:100%; margin-bottom:5px; }
 }
 </style>
 </head>
@@ -73,10 +77,10 @@ function createBookTable() {
   for(let i=1;i<=num;i++){
     html+=`<tr>
 <td>${i}</td>
-<td><input type="number" id="pages${i}" placeholder="Pages" oninput="updateCalculation()"></td>
-<td><input type="number" id="qty${i}" placeholder="Qty" oninput="updateCalculation()"></td>
-<td><select id="paper${i}" onchange="updateCalculation()"><option value="A3">A3</option><option value="A4">A4</option></select></td>
-<td><select id="material${i}" onchange="updateCalculation()"><option value="GL">GL</option><option value="WF">WF</option><option value="MT">MT</option></select></td>
+<td><input type="number" id="pages${i}" class="pageQty" placeholder="Pages" oninput="updateCalculation()"></td>
+<td><input type="number" id="qty${i}" class="pageQty" placeholder="Qty" oninput="updateCalculation()"></td>
+<td><select id="paper${i}" class="paperMaterial" onchange="updateCalculation()"><option value="A3">A3</option><option value="A4">A4</option></select></td>
+<td><select id="material${i}" class="paperMaterial" onchange="updateCalculation()"><option value="GL">GL</option><option value="WF">WF</option><option value="MT">MT</option></select></td>
 <td id="total${i}">0</td>
 </tr>`;
   }
