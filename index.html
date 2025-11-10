@@ -81,7 +81,7 @@
       }
       /* Smaller page & qty input, larger select */
       .pageQty {
-        width: 30px;
+        width: 22px;
         font-size: 13px;
       }
       .paperMaterial {
@@ -100,7 +100,7 @@
         }
         input.pageQty,
         select.paperMaterial {
-          width: 50%;
+          width: 100%;
           margin-bottom: 5px;
         }
       }
@@ -153,7 +153,7 @@
         if (isNaN(num) || num <= 0) return;
 
         let html = `<table id="bookTable"><thead>
-<tr><th>Book #</th><th>Pages</th><th>Qty</th><th>Paper Type</th><th>Material</th><th>Total</th></tr>
+<tr><th>Book #</th><th>Pages</th><th>Qty</th><th>Type</th><th>Material</th><th>Total</th></tr>
 </thead><tbody>`;
 
         for (let i = 1; i <= num; i++) {
@@ -245,10 +245,3 @@
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
