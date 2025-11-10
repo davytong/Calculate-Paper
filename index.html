@@ -159,8 +159,8 @@
         for (let i = 1; i <= num; i++) {
           html += `<tr>
 <td>${i}</td>
-<td><input type="number" id="pages${i}" class="pageQty" placeholder="Pages" oninput="updateCalculation()"></td>
-<td><input type="number" id="qty${i}" class="pageQty" placeholder="Qty" oninput="updateCalculation()"></td>
+<td><input type="number" id="pages${i}" class="pageQty" placeholder="0" oninput="updateCalculation()"></td>
+<td><input type="number" id="qty${i}" class="pageQty" placeholder="0" oninput="updateCalculation()"></td>
 <td><select id="paper${i}" class="paperMaterial" onchange="updateCalculation()"><option value="A3">A3</option><option value="A4">A4</option></select></td>
 <td><select id="material${i}" class="paperMaterial" onchange="updateCalculation()"><option value="GL">GL</option><option value="WF">WF</option><option value="MT">MT</option></select></td>
 <td id="total${i}">0</td>
@@ -245,6 +245,7 @@
     </script>
   </body>
 </html>
+
 
 
 
